@@ -13,7 +13,7 @@
         android:layout_marginTop="@dimen/_6sdp"
         android:layout_marginEnd="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_6sdp"
-        android:background="@drawable/bg_group"
+        android:background="@drawable/app_logo"
         app:cardCornerRadius="@dimen/_6sdp">
 
         <RelativeLayout
@@ -58,7 +58,7 @@
                         android:id="@+id/tv_group_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_medium"
+                        android:fontFamily="@font/manrope_medium"
                         android:singleLine="true"
                         android:text="Meeting Notes"
                         android:textColor="@color/black"
@@ -69,7 +69,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_1sdp"
-                        android:fontFamily="@font/poppins_regular"
+                        android:fontFamily="@font/manrope_regular"
                         android:maxLength="11"
                         android:singleLine="true"
                         android:text="2020-08-14  10.03 PM"

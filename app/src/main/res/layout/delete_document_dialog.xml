@@ -86,7 +86,7 @@
                 <TextView
                     style="@style/TextPopReg12"
                     android:layout_marginTop="@dimen/_15sdp"
-                    android:fontFamily="@font/inter_medium"
+                    android:fontFamily="@font/manrope_medium"
                     android:gravity="center"
                     android:maxWidth="@dimen/_180sdp"
                     android:text="@string/areUSure"

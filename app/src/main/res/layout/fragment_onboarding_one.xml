@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      tools:context=".activity.welcome.fragments.OnboardingOne">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:src="@drawable/app_logo"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_gravity="center_horizontal"/>
+
+    <ImageView
+        android:layout_width="@dimen/_260sdp"
+        android:layout_height="@dimen/_210sdp"
+        android:src="@drawable/onboarding1"
+        android:padding="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Simple way to scan"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:textSize="24sp"
+        android:textColor="#051E56"
+        android:fontFamily="@font/manrope_bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Flash will turn your phone into portable\namazing scanner!"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:textSize="14sp"
+        android:textColor="#051E56"
+        android:fontFamily="@font/manrope_regular"/>
+
+
+  </LinearLayout>
+
+</layout>

@@ -34,7 +34,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/_5sdp"
                 android:layout_toEndOf="@+id/iv_back"
-                android:fontFamily="@font/inter_medium"
+                android:fontFamily="@font/manrope_medium"
                 android:text="@string/savedDocument"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_15sdp" />
@@ -88,7 +88,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_8sdp"
-                        android:fontFamily="@font/inter_medium"
+                        android:fontFamily="@font/manrope_medium"
                         android:text="@string/retake"
                         android:textColor="@color/tab_white"
                         android:textSize="@dimen/_11sdp" />
@@ -115,7 +115,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_8sdp"
-                        android:fontFamily="@font/inter_medium"
+                        android:fontFamily="@font/manrope_medium"
                         android:text="@string/edit"
                         android:textColor="@color/tab_white"
                         android:textSize="@dimen/_11sdp" />
@@ -141,7 +141,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_8sdp"
-                        android:fontFamily="@font/inter_medium"
+                        android:fontFamily="@font/manrope_medium"
                         android:text="@string/rotate"
                         android:textColor="@color/tab_white"
                         android:textSize="@dimen/_11sdp" />
@@ -169,7 +169,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_8sdp"
-                        android:fontFamily="@font/inter_medium"
+                        android:fontFamily="@font/manrope_medium"
                         android:text="@string/delete"
                         android:textColor="@color/tab_white"
                         android:textSize="@dimen/_11sdp" />

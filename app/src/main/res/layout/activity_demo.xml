@@ -38,7 +38,7 @@
             android:background="@color/transparent"
             android:cursorVisible="true"
             android:focusable="true"
-            android:fontFamily="@font/inter_regular"
+            android:fontFamily="@font/manrope_regular"
             android:hint="Search for Document..."
             android:imeOptions="actionDone"
             android:inputType="text"

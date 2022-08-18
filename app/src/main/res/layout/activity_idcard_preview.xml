@@ -105,7 +105,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_4sdp"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/manrope_medium"
                     android:text="@string/edit"
                     android:textColor="@color/tab_white"
                     android:textSize="@dimen/_9sdp" />
@@ -131,7 +131,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_4sdp"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/manrope_medium"
                     android:text="@string/left"
                     android:textColor="@color/tab_white"
                     android:textSize="@dimen/_9sdp" />
@@ -157,7 +157,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_4sdp"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/manrope_medium"
                     android:text="@string/right"
                     android:textColor="@color/tab_white"
                     android:textSize="@dimen/_9sdp" />
@@ -183,7 +183,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_4sdp"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/manrope_medium"
                     android:text="@string/horizontal"
                     android:textColor="@color/tab_white"
                     android:textSize="@dimen/_9sdp" />
@@ -209,7 +209,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_4sdp"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/manrope_medium"
                     android:text="@string/verticle"
                     android:textColor="@color/tab_white"
                     android:textSize="@dimen/_9sdp" />
@@ -251,7 +251,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/manrope_medium"
                 android:text="@string/addNew"
                 android:textColor="@color/tab_white"
                 android:textSize="@dimen/_10sdp" />
@@ -276,7 +276,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/manrope_medium"
                 android:text="@string/color"
                 android:textColor="@color/tab_white"
                 android:textSize="@dimen/_10sdp" />
@@ -305,7 +305,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/manrope_medium"
                 android:text="@string/scrap"
                 android:textColor="@color/tab_white"
                 android:textSize="@dimen/_10sdp" />

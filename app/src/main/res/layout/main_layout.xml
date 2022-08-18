@@ -61,7 +61,7 @@
                     android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginEnd="@dimen/_15sdp"
                     android:onClick="onClick"
-                    android:src="@drawable/ic_list"
+                    android:src="@drawable/app_logo"
                     android:visibility="invisible" />
 
 
@@ -120,7 +120,7 @@
                     android:background="@color/transparent"
                     android:cursorVisible="true"
                     android:focusable="true"
-                    android:fontFamily="@font/inter_regular"
+                    android:fontFamily="@font/manrope_regular"
                     android:hint="Search for Document..."
                     android:imeOptions="actionDone"
                     android:inputType="text"

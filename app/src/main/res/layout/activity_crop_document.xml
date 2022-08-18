@@ -293,7 +293,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginTop="@dimen/_3sdp"
-                            android:fontFamily="@font/inter_regular"
+                            android:fontFamily="@font/manrope_regular"
                             android:text="@string/rotateDoc"
                             android:textColor="@color/tab_white"
                             android:textSize="@dimen/_12sdp" />
@@ -319,7 +319,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginTop="@dimen/_3sdp"
-                            android:fontFamily="@font/inter_regular"
+                            android:fontFamily="@font/manrope_regular"
                             android:text="@string/currentFilter"
                             android:textColor="@color/tab_white"
                             android:textSize="@dimen/_12sdp" />

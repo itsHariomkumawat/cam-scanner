@@ -87,7 +87,7 @@
                                 android:layout_marginTop="@dimen/_8sdp"
                                 android:layout_marginEnd="@dimen/_8sdp"
                                 android:layout_marginBottom="@dimen/_8sdp"
-                                android:src="@drawable/ic_one_side"
+                                android:src="@drawable/app_logo"
                                 android:visibility="visible" />
 
 
@@ -161,7 +161,7 @@
                                 android:layout_marginTop="@dimen/_8sdp"
                                 android:layout_marginEnd="@dimen/_8sdp"
                                 android:layout_marginBottom="@dimen/_8sdp"
-                                android:src="@drawable/ic_double_side" />
+                                android:src="@drawable/app_logo" />
 
                             <TextView
                                 android:id="@+id/txtTitle2"

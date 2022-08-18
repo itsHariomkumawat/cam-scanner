@@ -191,7 +191,7 @@ public class IDCardPreviewActivity extends BaseActivity implements View.OnClickL
 
     @Override
     public void onImageStickerSelected(ImageStickerConfig imageStickerConfig, boolean z) {
-        iv_scrap.setImageResource(R.drawable.ic_blue_scrap);
+        iv_scrap.setImageResource(R.drawable.app_logo);
         txtScrap.setTextColor(getResources().getColor(R.color.tab_white));
         ly_scrap_view.setVisibility(View.VISIBLE);
         Constant.original = imageStickerConfig.getBitmapImage();
@@ -217,7 +217,7 @@ public class IDCardPreviewActivity extends BaseActivity implements View.OnClickL
             case R.id.iv_done:
                 aspectRatioLayout.setDrawingCacheEnabled(true);
                 stickerHolderView.leaveSticker();
-                iv_scrap.setImageResource(R.drawable.ic_blue_scrap);
+                iv_scrap.setImageResource(R.drawable.app_logo);
                 txtScrap.setTextColor(getResources().getColor(R.color.tab_white));
                 ly_scrap_view.setVisibility(View.GONE);
                 new saveIDCard().execute(new Bitmap[0]);
@@ -242,7 +242,7 @@ public class IDCardPreviewActivity extends BaseActivity implements View.OnClickL
                     ly_scrap_view.setVisibility(View.GONE);
                     return;
                 } else if (ly_scrap_view.getVisibility() == View.GONE) {
-                    iv_scrap.setImageResource(R.drawable.ic_blue_scrap);
+                    iv_scrap.setImageResource(R.drawable.app_logo);
                     txtScrap.setTextColor(getResources().getColor(R.color.black));
                     ly_scrap_view.setVisibility(View.VISIBLE);
                     return;
