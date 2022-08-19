@@ -6,15 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.appentus.finecapture.R
+import com.appentus.finecapture.databinding.FragmentOnboardingOneBinding
+import com.appentus.finecapture.databinding.FragmentOnboardingTwoBinding
 
 class OnboardingTwo : Fragment() {
 
+    lateinit var binding: FragmentOnboardingTwoBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_onboarding_two, container, false)
+    ): View {
+        binding = FragmentOnboardingTwoBinding.inflate(layoutInflater)
+
+        return binding.root
     }
 
 }

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/ThemeBg"
     android:orientation="vertical">
 
@@ -24,24 +25,33 @@
 
                 <ImageView
                     android:id="@+id/iv_drawer"
-                    android:layout_width="@dimen/_25sdp"
-                    android:layout_height="@dimen/_25sdp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_22sdp"
                     android:layout_marginStart="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_12sdp"
                     android:onClick="onClick"
                     android:src="@drawable/ic_hamburger" />
 
-                <TextView
+                <ImageView
+                    android:layout_width="@dimen/_110sdp"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClick"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toEndOf="@+id/iv_drawer"
+                    android:src="@drawable/app_logo" />
+
+               <!-- <TextView
                     style="@style/TextPopBold22"
                     android:layout_below="@id/iv_drawer"
                     android:layout_marginStart="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:text="@string/documents"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_15sdp" />
+                    android:textSize="@dimen/_15sdp" />-->
 
 
-                <ImageView
+               <!-- <ImageView
                     android:id="@+id/iv_list"
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_25sdp"
@@ -50,9 +60,9 @@
                     android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginEnd="@dimen/_15sdp"
                     android:onClick="onClick"
-                    android:src="@drawable/ic_grid" />
+                    android:src="@drawable/ic_grid" />-->
 
-                <ImageView
+               <!-- <ImageView
                     android:id="@+id/iv_grid"
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_25sdp"
@@ -62,10 +72,10 @@
                     android:layout_marginEnd="@dimen/_15sdp"
                     android:onClick="onClick"
                     android:src="@drawable/app_logo"
-                    android:visibility="invisible" />
+                    android:visibility="visible" />-->
 
 
-                <ImageView
+               <!-- <ImageView
                     android:id="@+id/iv_search"
                     android:layout_width="@dimen/_18sdp"
                     android:layout_height="@dimen/_18sdp"
@@ -73,9 +83,9 @@
                     android:layout_marginEnd="@dimen/_8sdp"
                     android:layout_toStartOf="@+id/iv_more"
                     android:onClick="onClick"
-                    android:src="@drawable/ic_search" />
+                    android:src="@drawable/ic_search" />-->
 
-                <ImageView
+               <!-- <ImageView
                     android:id="@+id/iv_more"
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_18sdp"
@@ -83,64 +93,116 @@
                     android:layout_marginTop="@dimen/_12sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:onClick="onClick"
-                    android:src="@drawable/ic_more" />
+                    android:src="@drawable/ic_more" />-->
             </RelativeLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_weight="0.5"
+                    android:id="@+id/rl_search_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_42sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/search_bar_bg"
+                    android:visibility="visible"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_close_search"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:onClick="onClick"
+                        android:padding="@dimen/_2sdp"
+                        android:backgroundTint="#B3BCCF"
+                        android:src="@drawable/search" />
+
+                    <EditText
+                        android:id="@+id/et_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_36sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_marginEnd="@dimen/_7sdp"
+                        android:layout_toEndOf="@+id/iv_close_search"
+                        android:background="@color/transparent"
+                        android:cursorVisible="true"
+                        android:focusable="true"
+                        android:fontFamily="@font/manrope_regular"
+                        android:hint="Search for Document..."
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:textColor="#B3BCCF"
+                        android:textColorHint="#CECECE"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <!-- <ImageView
+                         android:id="@+id/iv_clear_txt"
+                         android:layout_width="@dimen/_20sdp"
+                         android:layout_height="@dimen/_20sdp"
+                         android:layout_alignParentEnd="true"
+                         android:layout_centerVertical="true"
+                         android:layout_marginEnd="@dimen/_5sdp"
+                         android:onClick="onClick"
+                         android:padding="@dimen/_2sdp"
+                         android:src="@drawable/ic_close_black_24dp"
+                         android:visibility="visible"
+                         app:tint="#858997" />-->
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/create_folder"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:onClick="onClick"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_gravity="center_vertical"
+                    android:backgroundTint="#B3BCCF"
+                    android:src="@drawable/add_new_folder" />
+                <ImageView
+                    android:id="@+id/sortBy"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:onClick="onClick"
+                    android:padding="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_40sdp"
+                    android:layout_gravity="center_vertical"
+                    android:backgroundTint="#B3BCCF"
+                    android:src="@drawable/new_sort" />
+
+            </LinearLayout>
 
             <RelativeLayout
-                android:id="@+id/rl_search_bar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:layout_marginBottom="@dimen/_7sdp"
-                android:background="@drawable/search_bar_bg"
-                android:visibility="gone"
-              >
-
-                <ImageView
-                    android:id="@+id/iv_close_search"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="@dimen/_5sdp"
-                    android:onClick="onClick"
-                    android:padding="@dimen/_2sdp"
-                    android:src="@drawable/search" />
-
-                <EditText
-                    android:id="@+id/et_search"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_36sdp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="@dimen/_3sdp"
-                    android:layout_marginEnd="@dimen/_7sdp"
-                    android:layout_toStartOf="@+id/iv_clear_txt"
-                    android:layout_toEndOf="@+id/iv_close_search"
-                    android:background="@color/transparent"
-                    android:cursorVisible="true"
-                    android:focusable="true"
-                    android:fontFamily="@font/manrope_regular"
-                    android:hint="Search for Document..."
-                    android:imeOptions="actionDone"
-                    android:inputType="text"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/TextPopBold22"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:text="My Scans"
                     android:textColor="@color/black"
-                    android:textColorHint="#CECECE"
-                    android:textSize="@dimen/_12sdp" />
-
-                <ImageView
-                    android:id="@+id/iv_clear_txt"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:textSize="@dimen/_15sdp"
+                    android:fontFamily="@font/manrope_semibold"/>
+                <TextView
+                    style="@style/TextPopBold22"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="See All"
                     android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="@dimen/_5sdp"
-                    android:onClick="onClick"
-                    android:padding="@dimen/_2sdp"
-                    android:src="@drawable/ic_close_black_24dp"
-                    android:visibility="invisible"
-                    app:tint="#858997" />
+                    android:textColor="#0DABAB"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/manrope_medium"
+                    android:drawablePadding="@dimen/_5sdp"
+                    app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
             </RelativeLayout>
+
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tag_tabs"
@@ -154,14 +216,28 @@
                 app:tabIndicatorColor="@color/blue"
                 app:tabIndicatorHeight="2dp"
                 app:tabMode="scrollable"
+                android:visibility="gone"
                 app:tabSelectedTextColor="@color/blue"
                 app:tabTextAppearance="@style/MyCustomTabText"
                 app:tabTextColor="@color/black" />
 
-            <View
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvScanFolders"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/viewColor" />
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                tools:itemCount="1"
+                tools:listitem="@layout/custom_scan_folder"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:text="Recent scans"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:fontFamily="@font/manrope_semibold"/>
 
 
         </LinearLayout>
@@ -173,6 +249,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_above="@+id/llBottom"
                 android:layout_marginTop="@dimen/_10sdp">
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -189,7 +266,7 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     android:paddingBottom="@dimen/_200sdp"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                     <ImageView
                         android:layout_width="@dimen/_70sdp"
@@ -207,42 +284,29 @@
             </RelativeLayout>
 
             <LinearLayout
-                android:layout_width="@dimen/_90sdp"
-                android:layout_height="@dimen/_35sdp"
-                android:layout_alignParentEnd="true"
+                android:id="@+id/llBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:layout_marginBottom="@dimen/_25sdp"
-                android:background="@drawable/main_curve_border"
-                android:gravity="center"
-                android:paddingStart="@dimen/_5sdp"
-                android:paddingEnd="@dimen/_5sdp">
+                android:gravity="center">
 
                 <ImageView
                     android:id="@+id/iv_group_camera"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_18sdp"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
                     android:layout_marginEnd="@dimen/_2sdp"
-                    android:layout_weight="1"
                     android:onClick="onClick"
-                    android:src="@drawable/grp_camera" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:background="#ffffff" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/new_glry_iv" />
 
 
                 <ImageView
                     android:id="@+id/gallery"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
                     android:layout_marginEnd="@dimen/_2sdp"
-                    android:layout_weight="1"
                     android:onClick="onClick"
-                    android:src="@drawable/groupgallery" />
+                    android:src="@drawable/new_scn_iv"  />
 
             </LinearLayout>
 

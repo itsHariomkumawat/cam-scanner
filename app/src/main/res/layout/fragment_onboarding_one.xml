@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
   <LinearLayout
+      android:id="@+id/llFragOne"
       android:orientation="vertical"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
@@ -27,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Simple way to scan"
-        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_30sdp"
         android:textSize="24sp"
         android:textColor="#051E56"
         android:fontFamily="@font/manrope_bold"/>
@@ -37,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"
         android:text="Flash will turn your phone into portable\namazing scanner!"
-        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_30sdp"
         android:textSize="14sp"
         android:textColor="#051E56"
         android:fontFamily="@font/manrope_regular"/>

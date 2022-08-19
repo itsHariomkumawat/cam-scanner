@@ -1,13 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools">
+
+<LinearLayout
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.welcome.fragments.OnboardingTwo">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:src="@drawable/app_logo"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_gravity="center_horizontal"/>
+
+    <ImageView
+        android:layout_width="@dimen/_260sdp"
+        android:layout_height="@dimen/_210sdp"
+        android:src="@drawable/onboarding2"
+        android:padding="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_gravity="center_horizontal"/>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:text="Organize is easy"
+        android:layout_marginHorizontal="@dimen/_30sdp"
+        android:textSize="24sp"
+        android:textColor="#051E56"
+        android:fontFamily="@font/manrope_bold"/>
 
-</FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Say no to mess,Add your folders,or just\nsearch with advance search."
+        android:layout_marginHorizontal="@dimen/_30sdp"
+        android:textSize="14sp"
+        android:textColor="#051E56"
+        android:fontFamily="@font/manrope_regular"/>
+
+
+</LinearLayout>
+
+</layout>

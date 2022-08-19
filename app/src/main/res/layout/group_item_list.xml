@@ -5,15 +5,9 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/_5sdp"
     android:layout_marginEnd="@dimen/_5sdp"
-
     android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_7sdp"
-        android:background="@drawable/app_logo"
-        app:cardCornerRadius="@dimen/_6sdp">
+
 
         <RelativeLayout
             android:id="@+id/rl_group"
@@ -62,20 +56,61 @@
 
                 <TextView
                     android:id="@+id/tv_group_name"
-                    style="@style/TextPopMed14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:singleLine="true"
                     android:textColor="@color/black"
                     android:text="CamScanner_123456"
-                    android:textSize="@dimen/_12sdp" />
+                    android:fontFamily="@font/manrope_medium"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tv_group_date"
-                    style="@style/TextPopReg12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:singleLine="true"
                     android:text="2020-08-14  10:03 PM"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_10sdp" />
+                    android:textColor="#9CA5BA"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/manrope_regular"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+                    <ImageView
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:src="@drawable/print" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="Print"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:textColor="#0DABAB"
+                        android:fontFamily="@font/manrope_semibold"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:src="@drawable/new_share" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="Share"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:textColor="#0DABAB"
+                        android:fontFamily="@font/manrope_semibold"
+                        android:textSize="14sp" />
+                </LinearLayout>
             </LinearLayout>
 
             <ImageView
@@ -83,8 +118,15 @@
                 android:layout_width="@dimen/_16sdp"
                 android:layout_height="@dimen/_16sdp"
                 android:layout_alignParentEnd="true"
+                android:rotation="90"
                 android:padding="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
                 android:src="@drawable/ic_more" />
         </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EEF2F9"
+        android:layout_marginVertical="@dimen/_5sdp"/>
 </LinearLayout>

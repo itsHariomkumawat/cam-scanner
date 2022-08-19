@@ -73,7 +73,43 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/vpWelcome"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="-16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <com.make.dots.dotsindicator.DotsIndicator
+            android:id="@+id/dotsIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            app:dot_drawable="@drawable/circle"
+            app:dot_drawable_unselected="@drawable/ring_indicator"
+            app:dot_height="@dimen/_10sdp"
+            app:dot_margin="6dp"
+            app:dot_width="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_30sdp"/>
+
+
+        <TextView
+            android:id="@+id/txt_NextBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/manrope_bold"
+            android:paddingHorizontal="@dimen/_30sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:background="@drawable/round_next"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

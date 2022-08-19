@@ -51,10 +51,13 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.appentus.finecapture.adapter.AdapterRVScanFolder;
+import com.appentus.finecapture.models.ModelRvScanFolder;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
@@ -79,6 +82,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.List;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
 
@@ -141,7 +145,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     public Dialog dialogMore, dialogItem;
 
-    public TextView sortBy, create_folder, shareAll, TextAbout;
+    public TextView sortBy;
+    public ImageView create_folder;
+    public TextView shareAll;
+    public TextView TextAbout;
 
     public ImageView iv_preview_crop;
     public ImageView clearText;
@@ -174,7 +181,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     public SharedPreferences preferences;
     private RelativeLayout rl_search_bar;
 
-    public RecyclerView rv_group;
+    public RecyclerView rv_group,rvScanFolders;
     protected String selected_sorting;
     protected int selected_sorting_pos;
 
@@ -185,6 +192,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     public TextView tv_empty;
     private ImageView iv_folder;
     private ImageView iv_grid;
+
+    AdapterRVScanFolder adapterRVScanFolder;
+    List<ModelRvScanFolder> modelRvScanFolderList = new ArrayList<>();
 
     @Override
     public void onResume() {
@@ -245,16 +255,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
         shareAll = (TextView) findViewById(R.id.share_all);
         sortBy = (TextView) findViewById(R.id.sort_by);
-        create_folder = (TextView) findViewById(R.id.create_folder);
+        create_folder = (ImageView) findViewById(R.id.create_folder);
 
-        iv_folder = (ImageView) findViewById(R.id.iv_list);
-        iv_grid = (ImageView) findViewById(R.id.iv_grid);
+     /*   iv_folder = (ImageView) findViewById(R.id.iv_list);
+        iv_grid = (ImageView) findViewById(R.id.iv_grid);*/
 
         clearText = (ImageView) findViewById(R.id.clear_text);
 
         iv_drawer = (ImageView) findViewById(R.id.iv_drawer);
 
-        iv_search = (ImageView) findViewById(R.id.iv_search);
+        //iv_search = (ImageView) findViewById(R.id.iv_search);
 
         iv_more = (ImageView) findViewById(R.id.iv_more);
         rl_search_bar = (RelativeLayout) findViewById(R.id.rl_search_bar);
@@ -273,6 +283,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         iv_clear_txt = (ImageView) findViewById(R.id.iv_clear_txt);
         tag_tabs = (TabLayout) findViewById(R.id.tag_tabs);
         rv_group = (RecyclerView) findViewById(R.id.rv_group);
+        rvScanFolders = (RecyclerView) findViewById(R.id.rvScanFolders);
         ly_empty = (LinearLayout) findViewById(R.id.ly_empty);
         tv_empty = (TextView) findViewById(R.id.tv_empty);
         iv_group_camera = (ImageView) findViewById(R.id.iv_group_camera);
@@ -303,6 +314,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             lv_drawer.setAdapter(drawerItemAdapter);
 
             setTab();
+
+        adapterRVScanFolder = new AdapterRVScanFolder(this,modelRvScanFolderList);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
+        rvScanFolders.setLayoutManager(layoutManager);
+        rvScanFolders.setItemAnimator(new DefaultItemAnimator());
+        rvScanFolders.setAdapter(adapterRVScanFolder);
+        modelRvScanFolderList.add(new ModelRvScanFolder("Personal"));
+
         }
 
     private void setTab() {
@@ -380,7 +399,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     public void onClick(View view) {
         switch (view.getId()) {
 
-            case R.id.iv_list:
+           /* case R.id.iv_list:
                 iv_folder.setVisibility(View.INVISIBLE);
                 iv_grid.setVisibility(View.VISIBLE);
                 editor = preferences.edit();
@@ -397,7 +416,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 editor.putString("ViewMode", "Grid");
                 editor.apply();
                 new setAllGroupAdapter().execute(new String[0]);
-                return;
+                return;*/
 
             /*   iv_grid.setImageResource(R.drawable.folder);*/
 
@@ -443,11 +462,80 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 dialogMore.show();
                 return;
 
-            case R.id.iv_search:
-                iv_search.setVisibility(View.GONE);
-                rl_search_bar.setVisibility(View.VISIBLE);
+            case R.id.rl_search_bar:
                 showSoftKeyboard(et_search);
+                return;
 
+                case R.id.create_folder:
+
+                    openNewFolderDialog("");
+                return;
+
+                case R.id.sortBy:
+                    final Dialog dialog = new Dialog(this);
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    View v = LayoutInflater.from(this).inflate(R.layout.sort_by_dialog,null);
+
+                    RadioButton radio_btn_Ad = (RadioButton) v.findViewById(R.id.rb_Ad);
+                    RadioButton radio_btn_Dd = (RadioButton) v.findViewById(R.id.rb_Dd);
+                    RadioButton radio_btn_An = (RadioButton) v.findViewById(R.id.rb_An);
+                    RadioButton radio_btn_Dn = (RadioButton) v.findViewById(R.id.rb_Dn);
+                    dialog.setContentView(v);
+
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+//               dialog.getWindow().setLayout(-1, -2);
+                    dialog.setCanceledOnTouchOutside(true);
+                    dialog.setCancelable(true);
+
+                    if (selected_sorting.equals(Constant.ascending_date)) {
+                        selected_sorting_pos = 0;
+                    } else if (selected_sorting.equals(Constant.descending_date)) {
+                        selected_sorting_pos = 1;
+                    } else if (selected_sorting.equals(Constant.ascending_name)) {
+                        selected_sorting_pos = 2;
+                    } else if (selected_sorting.equals(Constant.descending_name)) {
+                        selected_sorting_pos = 3;
+                    }
+
+                    radio_btn_Ad.setOnClickListener(view1 -> {
+                        mainActivity.editor = mainActivity.preferences.edit();
+                        editor.putString("sortBy", Constant.ascending_date);
+                        editor.apply();
+                        new setAllGroupAdapter().execute(new String[0]);
+                    });
+
+
+
+                    radio_btn_Dd.setOnClickListener(view1 -> {
+                        mainActivity.editor = mainActivity.preferences.edit();
+                        editor.putString("sortBy", Constant.descending_date);
+                        editor.apply();
+                        new setAllGroupAdapter().execute(new String[0]);
+                    });
+
+
+                    radio_btn_An.setOnClickListener(view1 -> {
+                        mainActivity.editor = mainActivity.preferences.edit();
+                        editor.putString("sortBy", Constant.ascending_name);
+                        editor.apply();
+                        new setAllGroupAdapter().execute(new String[0]);
+                    });
+
+
+                    radio_btn_Dn.setOnClickListener(view1 -> {
+                        mainActivity.editor = mainActivity.preferences.edit();
+                        editor.putString("sortBy", Constant.descending_name);
+                        editor.apply();
+                        new setAllGroupAdapter().execute(new String[0]);
+                    });
+                    dialog.show();
+
+                    WindowManager.LayoutParams lpb = new WindowManager.LayoutParams();
+                    lpb.copyFrom(dialog.getWindow().getAttributes());
+                    lpb.width = WindowManager.LayoutParams.MATCH_PARENT;
+                    lpb.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                    lpb.gravity = Gravity.BOTTOM;
+                    dialog.getWindow().setAttributes(lpb);
                 return;
             default:
                 return;

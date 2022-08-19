@@ -83,7 +83,6 @@
 
 
         <TextView
-            android:id="@+id/create_folder"
             style="@style/TextPopMed14"
             android:layout_marginTop="@dimen/_14sdp"
             android:onClick="BottomClick"
