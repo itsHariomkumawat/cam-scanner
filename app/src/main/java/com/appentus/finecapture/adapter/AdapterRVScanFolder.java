@@ -9,17 +9,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.appentus.finecapture.R;
 import com.appentus.finecapture.activity.MainActivity;
+import com.appentus.finecapture.activity.MyScans;
 import com.appentus.finecapture.models.ModelRvScanFolder;
 
 import java.util.List;
 
 public class AdapterRVScanFolder extends RecyclerView.Adapter<AdapterRVScanFolder.VH> {
 
+    MyScans myScans;
     MainActivity mainActivity;
-    List<ModelRvScanFolder> modelRvScanFolderList;
-    public AdapterRVScanFolder(MainActivity mainActivity, List<ModelRvScanFolder> modelRvScanFolderList) {
+    public AdapterRVScanFolder(MyScans myScans) {
+        this.myScans =myScans;
+    }
+
+    public AdapterRVScanFolder(MainActivity mainActivity) {
         this.mainActivity =mainActivity;
-        this.modelRvScanFolderList = modelRvScanFolderList;
     }
 
     @NonNull

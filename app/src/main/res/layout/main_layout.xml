@@ -190,16 +190,19 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_15sdp"
                     android:fontFamily="@font/manrope_semibold"/>
+
                 <TextView
-                    style="@style/TextPopBold22"
-                    android:layout_marginEnd="@dimen/_15sdp"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:text="See All"
+                    android:id="@+id/tvSeeAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/manrope_medium"
+                    android:text="See All"
                     android:textColor="#0DABAB"
                     android:textSize="14sp"
-                    android:fontFamily="@font/manrope_medium"
-                    android:drawablePadding="@dimen/_5sdp"
                     app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
             </RelativeLayout>
 
@@ -288,24 +291,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:gravity="center">
 
                 <ImageView
-                    android:id="@+id/iv_group_camera"
-                    android:layout_width="@dimen/_60sdp"
-                    android:layout_height="@dimen/_60sdp"
-                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:id="@+id/gallery"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
                     android:onClick="onClick"
                     android:scaleType="fitXY"
-                    android:src="@drawable/new_glry_iv" />
-
+                    android:src="@drawable/new_grly_iv" />
 
                 <ImageView
-                    android:id="@+id/gallery"
-                    android:layout_width="@dimen/_100sdp"
-                    android:layout_height="@dimen/_100sdp"
+                    android:id="@+id/iv_group_camera"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_70sdp"
                     android:layout_marginEnd="@dimen/_2sdp"
                     android:onClick="onClick"
+                    android:layout_marginStart="@dimen/_5sdp"
                     android:src="@drawable/new_scn_iv"  />
 
             </LinearLayout>

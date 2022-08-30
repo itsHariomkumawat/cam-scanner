@@ -145,7 +145,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     public Dialog dialogMore, dialogItem;
 
-    public TextView sortBy;
+    public TextView sortBy,tvSeeAll;
     public ImageView create_folder;
     public TextView shareAll;
     public TextView TextAbout;
@@ -256,6 +256,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         shareAll = (TextView) findViewById(R.id.share_all);
         sortBy = (TextView) findViewById(R.id.sort_by);
         create_folder = (ImageView) findViewById(R.id.create_folder);
+        tvSeeAll = (TextView) findViewById(R.id.tvSeeAll);
 
      /*   iv_folder = (ImageView) findViewById(R.id.iv_list);
         iv_grid = (ImageView) findViewById(R.id.iv_grid);*/
@@ -314,13 +315,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             lv_drawer.setAdapter(drawerItemAdapter);
 
             setTab();
+            adapterRVScanFolder = new AdapterRVScanFolder(this);
+            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
+            rvScanFolders.setLayoutManager(layoutManager);
+            rvScanFolders.setItemAnimator(new DefaultItemAnimator());
+            rvScanFolders.setAdapter(adapterRVScanFolder);
+            modelRvScanFolderList.add(new ModelRvScanFolder("Personal"));
 
-        adapterRVScanFolder = new AdapterRVScanFolder(this,modelRvScanFolderList);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
-        rvScanFolders.setLayoutManager(layoutManager);
-        rvScanFolders.setItemAnimator(new DefaultItemAnimator());
-        rvScanFolders.setAdapter(adapterRVScanFolder);
-        modelRvScanFolderList.add(new ModelRvScanFolder("Personal"));
+            tvSeeAll.setOnClickListener(view -> {
+                startActivity(new Intent(this,MyScans.class));
+            });
 
         }
 
@@ -366,9 +370,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
                 if (i3 == 0) {
-                    iv_more.setVisibility(View.VISIBLE);
+                  //  iv_more.setVisibility(View.VISIBLE);
                 } else if (i3 == 1) {
-                    iv_clear_txt.setVisibility(View.VISIBLE);
+                   // iv_clear_txt.setVisibility(View.GONE);
                 }
             }
 
@@ -424,15 +428,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 et_search.setText("");
                 iv_clear_txt.setVisibility(View.GONE);
                 return;
+
             case R.id.iv_close_search:
                 iv_search.setVisibility(View.VISIBLE);
                 rl_search_bar.setVisibility(View.GONE);
                 et_search.setText("");
                 hideSoftKeyboard(et_search);
                 return;
+
             case R.id.iv_drawer:
                 drawer_ly.openDrawer(GravityCompat.START);
                 return;
+
             case R.id.iv_group_camera:
                 ActivityCompat.requestPermissions(this, new String[]{"android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.CAMERA"}, 2);
                 return;
@@ -452,7 +459,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 //               dialog.getWindow().setLayout(-1, -2);
                 dialogMore.setCanceledOnTouchOutside(true);
                 dialogMore.setCancelable(true);
-
                 WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
                 lp.copyFrom(dialogMore.getWindow().getAttributes());
                 lp.width = WindowManager.LayoutParams.MATCH_PARENT;
@@ -505,7 +511,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     });
 
 
-
                     radio_btn_Dd.setOnClickListener(view1 -> {
                         mainActivity.editor = mainActivity.preferences.edit();
                         editor.putString("sortBy", Constant.descending_date);
@@ -528,6 +533,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                         editor.apply();
                         new setAllGroupAdapter().execute(new String[0]);
                     });
+
                     dialog.show();
 
                     WindowManager.LayoutParams lpb = new WindowManager.LayoutParams();
@@ -560,7 +566,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         lp.gravity = Gravity.BOTTOM;
         dialog.getWindow().setAttributes(lp);
 
-
         et_folder_name = (EditText) dialog.findViewById(R.id.et_folder_name);
 
         String folder_name = "FineCapture" + Constant.getDateTime("_ddMMHHmmss");
@@ -583,7 +588,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                         catch (Exception ignored){
                             Toast.makeText(MainActivity.this ,"Already Created" ,Toast.LENGTH_SHORT).show();
                         }
-
 
                     } else {
                         dbHelper.createDocTable(finalFolderName);
@@ -611,10 +615,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 } else {
                     Toast.makeText(mainActivity, "Folder name is required", Toast.LENGTH_SHORT).show();
                 }
-
             }
-
         });
+
         ((TextView) dialog.findViewById(R.id.iv_close)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -632,6 +635,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
         dialog.show();
     }
+
 
     @Override
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -1798,7 +1802,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         lp.gravity = Gravity.BOTTOM;
         dialog.getWindow().setAttributes(lp);
 
-
        /* if (AdmobAds.SHOW_ADS) {
             AdmobAds.loadNativeAds(MainActivity.this, (View) null, (ViewGroup) dialog.findViewById(R.id.admob_native_container), (NativeAdView) dialog.findViewById(R.id.native_ad_view));
         } else {
@@ -1827,7 +1830,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         });
 
     }
-
 
     public void onDrawerItemSelected(int i) {
         /*Home*/
@@ -1886,7 +1888,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             }
             Constant.shareApp(this);
 
-
             /*Rate us*/
         } else if (i == 8) {
             if (drawer_ly.isDrawerOpen(GravityCompat.START)) {
@@ -1930,7 +1931,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
                 });
 
-
                 light.setOnClickListener(v-> {
                     Toast.makeText(MainActivity.this, "Light Theme", Toast.LENGTH_SHORT).show();
                     sharedPreferences.edit().putInt(Constant.KEY_THEME, Constant.THEME_LIGHT).apply();
@@ -1943,7 +1943,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     sharedPreferences.edit().putInt(Constant.KEY_THEME, Constant.THEME_DARK).apply();
                     setTheme(AppCompatDelegate.MODE_NIGHT_YES, Constant.THEME_DARK);
                 });
-
 
                 dialog.show();
 

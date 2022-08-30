@@ -318,7 +318,7 @@ public class ScannerActivity extends BaseActivity implements ActivityCompat.OnRe
     private TextView tv_book;
     private TextView tv_document;
     public TextView tv_id_card;
-    private TextView tv_idcard;
+    private ImageView tv_idcard;
     private TextView tv_photo;
 
     @Override
@@ -377,7 +377,7 @@ public class ScannerActivity extends BaseActivity implements ActivityCompat.OnRe
         iv_done = (ImageView) findViewById(R.id.iv_done);
         tv_document = (TextView) findViewById(R.id.tv_document);
         tv_book = (TextView) findViewById(R.id.tv_book);
-        tv_idcard = (TextView) findViewById(R.id.tv_idcard);
+        tv_idcard = (ImageView) findViewById(R.id.tv_idcard);
         tv_photo = (TextView) findViewById(R.id.tv_photo);
         cameraView = (CameraView) findViewById(R.id.cameraView);
         rl_book_view = (RelativeLayout) findViewById(R.id.rl_book_view);
@@ -445,11 +445,11 @@ public class ScannerActivity extends BaseActivity implements ActivityCompat.OnRe
             /*  tv_document.setTextColor(getResources().getColor(R.color.black));*/
             tv_document.setBackgroundResource(R.drawable.tab_curve);
             tv_book.setBackgroundResource(R.drawable.tab_curve_black);
-            tv_idcard.setBackgroundResource(R.drawable.tab_curve_black);
+           // tv_idcard.setBackgroundResource(R.drawable.tab_curve_black);
             tv_photo.setBackgroundResource(R.drawable.tab_curve_black);
 
             tv_book.setTextColor(getResources().getColor(R.color.tab_white));
-            tv_idcard.setTextColor(getResources().getColor(R.color.tab_white));
+          //  tv_idcard.setTextColor(getResources().getColor(R.color.tab_white));
             tv_photo.setTextColor(getResources().getColor(R.color.tab_white));
             tv_document.setTextColor(getResources().getColor(R.color.tab_white));
 
@@ -457,12 +457,12 @@ public class ScannerActivity extends BaseActivity implements ActivityCompat.OnRe
             rl_book_view.setVisibility(View.VISIBLE);
             rl_idcard_view.setVisibility(View.GONE);
             tv_document.setBackgroundResource(R.drawable.tab_curve_black);
-            tv_idcard.setBackgroundResource(R.drawable.tab_curve_black);
+           // tv_idcard.setBackgroundResource(R.drawable.tab_curve_black);
             tv_photo.setBackgroundResource(R.drawable.tab_curve_black);
 
             tv_document.setTextColor(getResources().getColor(R.color.tab_white));
             tv_book.setBackgroundResource(R.drawable.tab_curve);
-            tv_idcard.setTextColor(getResources().getColor(R.color.tab_white));
+          //  tv_idcard.setTextColor(getResources().getColor(R.color.tab_white));
             tv_photo.setTextColor(getResources().getColor(R.color.tab_white));
 
         } else if (Constant.current_camera_view.equals("ID Card")) {
@@ -475,7 +475,7 @@ public class ScannerActivity extends BaseActivity implements ActivityCompat.OnRe
 
             tv_document.setTextColor(getResources().getColor(R.color.tab_white));
             tv_book.setTextColor(getResources().getColor(R.color.tab_white));
-            tv_idcard.setBackgroundResource(R.drawable.tab_curve);
+            //tv_idcard.setBackgroundResource(R.drawable.tab_curve);
             tv_photo.setTextColor(getResources().getColor(R.color.tab_white));
 
             IDCardDialog();
@@ -486,10 +486,10 @@ public class ScannerActivity extends BaseActivity implements ActivityCompat.OnRe
 
             tv_book.setBackgroundResource(R.drawable.tab_curve_black);
             tv_document.setBackgroundResource(R.drawable.tab_curve_black);
-            tv_idcard.setBackgroundResource(R.drawable.tab_curve_black);
+            //tv_idcard.setBackgroundResource(R.drawable.tab_curve_black);
             tv_document.setTextColor(getResources().getColor(R.color.tab_white));
             tv_book.setTextColor(getResources().getColor(R.color.tab_white));
-            tv_idcard.setTextColor(getResources().getColor(R.color.tab_white));
+            //tv_idcard.setTextColor(getResources().getColor(R.color.tab_white));
             tv_photo.setBackgroundResource(R.drawable.tab_curve);
 
          /*   v_document.setVisibility(View.INVISIBLE);
@@ -516,21 +516,23 @@ public class ScannerActivity extends BaseActivity implements ActivityCompat.OnRe
 
 //        tv_select1.setBackground(getResources().getDrawable(R.drawable.green_id_card_selection));
         });
+
         ((LinearLayout) dialog.findViewById(R.id.tv_select2)).setOnClickListener(view -> {
             makeSelectable(dialog, 1);
             Constant.card_type = "Double";
             tv_id_card.setVisibility(View.VISIBLE);
             dialog.dismiss();
         });
+
         ((ImageView) dialog.findViewById(R.id.iv_close)).setOnClickListener(view -> dialog.dismiss());
         dialog.show();
+
     }
 
     private void makeSelectable(Dialog dialog, int i) {
+
         if (i == 0) {
-
             ((ImageView) dialog.findViewById(R.id.ivsingle_id)).setBackgroundResource(R.drawable.oneside_id_white);
-
             ((LinearLayout) dialog.findViewById(R.id.tv_select1)).setBackgroundColor(getResources().getColor(R.color.blue));
             ((LinearLayout) dialog.findViewById(R.id.tv_select2)).setBackgroundColor(getResources().getColor(R.color.note_color));
             ((TextView) dialog.findViewById(R.id.txtTitle1)).setTextColor(getResources().getColor(R.color.tab_white));
@@ -546,9 +548,9 @@ public class ScannerActivity extends BaseActivity implements ActivityCompat.OnRe
             ((TextView) dialog.findViewById(R.id.tv_sub_text2)).setTextColor(getResources().getColor(R.color.tab_white));
             ((LinearLayout) dialog.findViewById(R.id.tv_select2)).setBackgroundColor(getResources().getColor(R.color.blue));
             ((LinearLayout) dialog.findViewById(R.id.tv_select1)).setBackgroundColor(getResources().getColor(R.color.note_color));
+
         }
     }
-
 
     @Override
     public void onPause() {
@@ -898,6 +900,7 @@ public class ScannerActivity extends BaseActivity implements ActivityCompat.OnRe
                 ly_crop.setVisibility(View.GONE);
                 ly_filter.setVisibility(View.GONE);
                 return;
+
             case R.id.iv_sharp_black:
                 showProgressDialog();
                 AsyncTask.execute(new Runnable() {
@@ -925,6 +928,7 @@ public class ScannerActivity extends BaseActivity implements ActivityCompat.OnRe
                         });
                     }
                 });
+
                 iv_original.setBackgroundResource(R.drawable.filter_bg);
                 iv_original.setTextColor(getResources().getColor(R.color.black));
 
@@ -937,6 +941,7 @@ public class ScannerActivity extends BaseActivity implements ActivityCompat.OnRe
                 iv_ocv_black.setBackgroundResource(R.drawable.filter_bg);
                 iv_ocv_black.setTextColor(getResources().getColor(R.color.black));
                 return;
+
             case R.id.iv_switch_camera:
 
                 if (cameraView != null) {
@@ -949,6 +954,7 @@ public class ScannerActivity extends BaseActivity implements ActivityCompat.OnRe
                     return;
                 }
                 return;
+
             case R.id.iv_switch_flash:
                 if (cameraView != null) {
                     current_flash = (current_flash + 1) % FLASH_SETTING.length;
@@ -957,6 +963,7 @@ public class ScannerActivity extends BaseActivity implements ActivityCompat.OnRe
                     return;
                 }
                 return;
+
             case R.id.iv_take_picture:
                 if (tv_id_card.getText().equals("Back Side") && idcardImgList.size() == 2) {
                     Toast.makeText(this, "You selected two side ID card, Please complete the process.", Toast.LENGTH_SHORT).show();
@@ -968,7 +975,9 @@ public class ScannerActivity extends BaseActivity implements ActivityCompat.OnRe
                 } else {
                     return;
                 }
+
             case R.id.ly_current_filter:
+
                 if (iv_card_crop.canRightCrop()) {
                     Constant.IDCardBitmap = iv_card_crop.crop();
                     ly_camera.setVisibility(View.GONE);

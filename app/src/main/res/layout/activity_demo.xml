@@ -54,7 +54,7 @@
             android:layout_marginEnd="@dimen/_5sdp"
             android:padding="@dimen/_5sdp"
             android:src="@drawable/ic_close_black_24dp"
-            android:visibility="invisible"
+            android:visibility="visible"
             app:tint="#858997" />
 
 

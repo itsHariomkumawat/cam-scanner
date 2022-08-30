@@ -134,7 +134,8 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
             original = Constant.original;
             changeBrightness(20);
         }
-/*
+
+            /*
         AdsUtils.loadGoogleInterstitialAd(this, CropDocumentActivity.this);
         AdsUtils.showGoogleBannerAd(this, adView);*/
 
@@ -162,10 +163,10 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
                     e.printStackTrace();
                     dismissProgressDialog();
                 }
-
                 return;
 
             /*OCVBlack*/
+
             case R.id.iv_ocv_black:
                 iv_ocv_black.setImageResource(R.drawable.ic_original_blue);
                 iv_original.setImageResource(R.drawable.originalwhite);
@@ -188,6 +189,7 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
                                 }
                             });
                         }
+
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -200,6 +202,7 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
                 return;
 
             /*Color*/
+
             case R.id.iv_color:
 
                 iv_color.setImageResource(R.drawable.ic_color_blue);
@@ -224,6 +227,7 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
                                 }
                             });
                         }
+
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -256,6 +260,7 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
                                 }
                             });
                         }
+
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -279,6 +284,7 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
                     return;
                 }
                 return;
+
             case R.id.iv_back:
                 onBackPressed();
                 return;
@@ -304,20 +310,25 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
                 }
 
                 return;
+
             case R.id.iv_edit:
                 if (iv_preview_crop.canRightCrop()) {
                     Constant.original = iv_preview_crop.crop();
                     new addGroup().execute(new Bitmap[]{Constant.original});
                     return;
                 }
+
                 return;
+
             case R.id.iv_full_crop:
                 iv_preview_crop.setFullImgCrop();
                 return;
+
             case R.id.iv_retake:
                 Constant.IdentifyActivity = "ScannerActivity_Retake";
                 AdsUtils.showGoogleInterstitialAd(CropDocumentActivity.this, true);
                 return;
+
             case R.id.ly_current_filter:
                 if (iv_preview_crop.canRightCrop()) {
                     Constant.original = iv_preview_crop.crop();

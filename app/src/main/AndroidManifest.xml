@@ -19,7 +19,6 @@
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-  <!--  <uses-permission android:name="com.android.vending.BILLING" />-->
 
     <application
         android:name="com.appentus.finecapture.MyApp"
@@ -33,11 +32,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CamScanner"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.appentus.finecapture.activity.DemoActivity"></activity>
-        <activity android:name="com.appentus.finecapture.activity.TermsConditionActivity" />
-        <activity android:name="com.appentus.finecapture.activity.PrivacyPolicy" />
-        <activity android:name="com.appentus.finecapture.activity.AboutUsActivity" />
-        <activity android:name="com.appentus.finecapture.activity.welcome.WelcomeActivity" /> <!-- <activity android:name=".activity.WelcomeScreen"></activity> -->
+        <activity
+            android:name=".activity.MyScans"
+            android:exported="false" />
+        <activity android:name=".activity.DemoActivity" />
+        <activity android:name=".activity.TermsConditionActivity" />
+        <activity android:name=".activity.PrivacyPolicy" />
+        <activity android:name=".activity.AboutUsActivity" />
+        <activity android:name=".activity.welcome.WelcomeActivity" /> <!-- <activity android:name=".activity.WelcomeScreen"></activity> -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -50,9 +52,9 @@
                 tools:replace="android:resource" />
         </provider>
 
-        <activity android:name="com.appentus.finecapture.activity.BaseActivity" />
+        <activity android:name=".activity.BaseActivity" />
         <activity
-            android:name="com.appentus.finecapture.activity.SplashActivity"
+            android:name=".activity.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,55 +63,55 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.appentus.finecapture.activity.MainActivity"
+            android:name=".activity.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.appentus.finecapture.activity.ScannerActivity"
+            android:name=".activity.ScannerActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
             android:theme="@style/uCropStyle" />
         <activity
-            android:name="com.appentus.finecapture.activity.IDCardPreviewActivity"
+            android:name=".activity.IDCardPreviewActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appentus.finecapture.activity.CropDocumentActivity"
+            android:name=".activity.CropDocumentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appentus.finecapture.activity.CurrentFilterActivity"
+            android:name=".activity.CurrentFilterActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appentus.finecapture.activity.SavedDocumentActivity"
+            android:name=".activity.SavedDocumentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appentus.finecapture.activity.DocumentEditorActivity"
+            android:name=".activity.DocumentEditorActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name="com.appentus.finecapture.activity.SavedEditDocumentActivity"
+            android:name=".activity.SavedEditDocumentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appentus.finecapture.activity.SavedDocumentPreviewActivity"
+            android:name=".activity.SavedDocumentPreviewActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appentus.finecapture.activity.NoteActivity"
+            android:name=".activity.NoteActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appentus.finecapture.activity.ImageToTextActivity"
+            android:name=".activity.ImageToTextActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appentus.finecapture.activity.GroupDocumentActivity"
+            android:name=".activity.GroupDocumentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appentus.finecapture.activity.PDFViewerActivity"
+            android:name=".activity.PDFViewerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appentus.finecapture.activity.QRGenerateActivity"
+            android:name=".activity.QRGenerateActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.appentus.finecapture.activity.QRReaderActivity"
+            android:name=".activity.QRReaderActivity"
             android:screenOrientation="portrait" />
 
         <meta-data
