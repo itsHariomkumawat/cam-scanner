@@ -62,17 +62,15 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
     public DBHelper dbHelper;
     protected ImageView iv_back;
     protected ImageView iv_Rotate_Doc;
-    protected ImageView iv_edit;
-    protected TextView iv_done;
+    protected TextView iv_edit;
+    protected ImageView iv_done;
     protected ImageView iv_full_crop;
     private CropImageView iv_preview_crop;
-    protected TextView iv_retake;
+    protected ImageView iv_retake;
     protected LinearLayout ly_current_filter;
     protected LinearLayout ly_rotate_doc;
-
     public String selected_group_name;
     private AdView adView;
-
     private ImageView iv_ocv_black;
     private ImageView iv_original;
     private ImageView iv_color;
@@ -113,15 +111,14 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
     private void init() {
         adView = findViewById(R.id.adView);
         seekBarBrightness = (SeekBar) findViewById(R.id.seekBarBrightness);
-
         iv_back = (ImageView) findViewById(R.id.iv_back);
-        iv_edit = (ImageView) findViewById(R.id.iv_edit);
-        iv_done = (TextView) findViewById(R.id.iv_done);
+        iv_edit = (TextView) findViewById(R.id.iv_edit);
+        iv_done = (ImageView) findViewById(R.id.iv_done);
         iv_preview_crop = (CropImageView) findViewById(R.id.iv_preview_crop);
         iv_full_crop = (ImageView) findViewById(R.id.iv_full_crop);
         ly_rotate_doc = (LinearLayout) findViewById(R.id.ly_rotate_doc);
         ly_current_filter = (LinearLayout) findViewById(R.id.ly_current_filter);
-        iv_retake = (TextView) findViewById(R.id.iv_retake);
+        iv_retake = (ImageView) findViewById(R.id.iv_retake);
         iv_Rotate_Doc = (ImageView) findViewById(R.id.iv_Rotate_Doc);
         iv_original = (ImageView) findViewById(R.id.iv_original);
         iv_color = (ImageView) findViewById(R.id.iv_color);
@@ -135,7 +132,7 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
             changeBrightness(20);
         }
 
-            /*
+        /*
         AdsUtils.loadGoogleInterstitialAd(this, CropDocumentActivity.this);
         AdsUtils.showGoogleBannerAd(this, adView);*/
 
@@ -278,11 +275,13 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
                 return;
 
             case R.id.iv_done:
+
                 if (iv_preview_crop.canRightCrop()) {
                     Constant.original = iv_preview_crop.crop();
                     new addDocGroup().execute(new Bitmap[]{Constant.original});
                     return;
                 }
+
                 return;
 
             case R.id.iv_back:
@@ -312,6 +311,7 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
                 return;
 
             case R.id.iv_edit:
+
                 if (iv_preview_crop.canRightCrop()) {
                     Constant.original = iv_preview_crop.crop();
                     new addGroup().execute(new Bitmap[]{Constant.original});
@@ -321,7 +321,9 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
                 return;
 
             case R.id.iv_full_crop:
+
                 iv_preview_crop.setFullImgCrop();
+
                 return;
 
             case R.id.iv_retake:
@@ -383,13 +385,16 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
 
         @Override
         public Bitmap doInBackground(Bitmap... bitmapArr) {
+
             Bitmap bitmap = Constant.original;
             if (bitmap == null) {
                 return null;
             }
+
             byte[] bytes = BitmapUtils.getBytes(bitmap);
             File externalFilesDir = getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS);
             File file = new File(externalFilesDir, System.currentTimeMillis() + ".jpg");
+
             try {
                 FileOutputStream fileOutputStream = new FileOutputStream(file);
                 fileOutputStream.write(bytes);
@@ -397,6 +402,7 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
             if (Constant.inputType.equals("Group")) {
                 group_name = "CamScanner" + Constant.getDateTime("_ddMMHHmmss");
                 group_date = Constant.getDateTime("yyyy-MM-dd  hh:mm a");
@@ -406,10 +412,12 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
                 dbHelper.addGroupDoc(group_name, file.getPath(), current_doc_name, "Insert text here...");
                 return null;
             }
+
             group_name = GroupDocumentActivity.current_group;
             current_doc_name = "Doc_" + System.currentTimeMillis();
             dbHelper.addGroupDoc(group_name, file.getPath(), current_doc_name, "Insert text here...");
             return null;
+
         }
 
         @Override
@@ -449,9 +457,11 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
             if (bitmap == null) {
                 return null;
             }
+
             byte[] bytes = BitmapUtils.getBytes(bitmap);
             File externalFilesDir = getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS);
             File file = new File(externalFilesDir, System.currentTimeMillis() + ".jpg");
+
             try {
                 FileOutputStream fileOutputStream = new FileOutputStream(file);
                 fileOutputStream.write(bytes);
@@ -459,6 +469,7 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
             if (Constant.inputType.equals("Group")) {
                 group_name = "CamScanner" + Constant.getDateTime("_ddMMHHmmss");
                 group_date = Constant.getDateTime("yyyy-MM-dd  hh:mm a");
@@ -468,6 +479,7 @@ public class CropDocumentActivity extends BaseActivity implements View.OnClickLi
                 dbHelper.addGroupDoc(group_name, file.getPath(), current_doc_name, "Insert text here...");
                 return null;
             }
+
             group_name = GroupDocumentActivity.current_group;
             current_doc_name = "Doc_" + System.currentTimeMillis();
             dbHelper.addGroupDoc(group_name, file.getPath(), current_doc_name, "Insert text here...");

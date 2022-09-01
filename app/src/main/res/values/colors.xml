@@ -44,7 +44,7 @@
 
 
     <!-- TODO :: Light Colors -->
-    <color name="ThemeBg">#FCFDFF</color>
+    <color name="ThemeBg">#0DABAB</color>
     <color name="TextTheme">#000000</color>
     <color name="DialogBottom">#FFFFFF</color>
     <color name="tab_color">#E7F7F3</color>

@@ -37,7 +37,7 @@
                 android:text="@string/cropDocument" />
 
 
-            <ImageView
+           <!-- <ImageView
                 android:id="@+id/iv_edit"
                 android:layout_width="@dimen/_22sdp"
                 android:layout_height="@dimen/_22sdp"
@@ -45,7 +45,17 @@
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:onClick="onClick"
-                android:src="@drawable/ic_edit_1" />
+                android:src="@drawable/ic_edit_1" />-->
+
+            <TextView
+                android:id="@+id/iv_edit"
+                style="@style/WhitePopSemi12"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:onClick="onClick"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:text="@string/edit" />
 
             <!--   <ImageView
                    android:id="@+id/iv_done"
@@ -57,6 +67,7 @@
                    android:onClick="onClick"
                    android:src="@drawable/ic_check_mark"
                    app:tint="#ffffff" />-->
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -111,7 +122,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:background="#000000"
+                android:background="#EDEDED"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:paddingTop="@dimen/_12sdp"
@@ -149,13 +160,13 @@
                         android:thumb="@drawable/ic_thumb_1" />
 
 
-                    <ImageView
+                  <!--  <ImageView
                         android:id="@+id/iv_Rotate_Doc"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/_22sdp"
                         android:layout_weight="0.5"
                         android:onClick="onClick"
-                        android:src="@drawable/rotate" />
+                        android:src="@drawable/rotate" />-->
 
                 </LinearLayout>
 
@@ -165,6 +176,7 @@
                     android:layout_height="wrap_content"
                     android:background="#000000"
                     android:gravity="center"
+                    android:visibility="gone"
                     android:orientation="horizontal"
                     android:paddingTop="@dimen/_15sdp"
                     android:paddingBottom="@dimen/_15sdp">
@@ -339,7 +351,7 @@
                     android:paddingBottom="@dimen/_2sdp"
                     android:orientation="horizontal">
 
-                    <TextView
+                  <!--  <TextView
                         android:id="@+id/iv_retake"
                         style="@style/WhitePopMed12"
                         android:layout_marginStart="@dimen/_15sdp"
@@ -352,9 +364,60 @@
                         android:paddingTop="@dimen/_5sdp"
                         android:paddingEnd="@dimen/_8sdp"
                         android:paddingBottom="@dimen/_5sdp"
-                        android:text="@string/retake" />
+                        android:text="@string/retake" />-->
 
-                    <TextView
+                    <LinearLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:onClick="onClick"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_Rotate_Doc"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:onClick="onClick"
+                            android:padding="@dimen/_5sdp"
+                            android:src="@drawable/new_rotate" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/manrope_bold"
+                            android:text="Rotate"
+                            android:textColor="#0DABAB" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:onClick="onClick"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_retake"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:onClick="onClick"
+                            android:padding="@dimen/_5sdp"
+                            android:src="@drawable/retake" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/manrope_bold"
+                            android:text="Retake"
+                            android:textColor="#0DABAB" />
+                    </LinearLayout>
+
+                  <!--  <TextView
                         android:id="@+id/iv_done"
                         style="@style/WhitePopMed12"
                         android:layout_marginStart="@dimen/_15sdp"
@@ -367,7 +430,25 @@
                         android:paddingTop="@dimen/_5sdp"
                         android:paddingEnd="@dimen/_5sdp"
                         android:paddingBottom="@dimen/_5sdp"
-                        android:text="Continue " />
+                        android:text="Continue " />-->
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="1">
+
+                            <ImageView
+                                android:id="@+id/iv_done"
+                                android:onClick="onClick"
+                                android:layout_width="@dimen/_35sdp"
+                                android:layout_height="@dimen/_35sdp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_new_done"/>
+
+
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </RelativeLayout>

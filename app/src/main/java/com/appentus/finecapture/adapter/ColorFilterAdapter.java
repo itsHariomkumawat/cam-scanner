@@ -17,7 +17,6 @@ import com.appentus.finecapture.activity.DocumentEditorActivity;
 import com.appentus.finecapture.main_utils.Constant;
 import com.appentus.finecapture.document_view.ColorFilter;
 
-
 public class ColorFilterAdapter extends RecyclerView.Adapter<ColorFilterAdapter.ViewHolder> {
 
     public Activity activity;
@@ -28,10 +27,12 @@ public class ColorFilterAdapter extends RecyclerView.Adapter<ColorFilterAdapter.
         this.activity = activity2;
         this.colorFilterName = strArr;
     }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         return new ViewHolder(LayoutInflater.from(activity).inflate(R.layout.color_filter_list_item, viewGroup, false));
     }
+
     @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int i) {
@@ -74,6 +75,7 @@ public class ColorFilterAdapter extends RecyclerView.Adapter<ColorFilterAdapter.
                 viewHolder.iv_filter_view.setImageBitmap(colorFilter.filter11(activity, Constant.original));
                 break;
         }
+
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,6 +84,7 @@ public class ColorFilterAdapter extends RecyclerView.Adapter<ColorFilterAdapter.
                 ((DocumentEditorActivity) activity).onColorFilterSeleced(activity, i);
             }
         });
+
         if (Constant.filterPosition == i) {
             viewHolder.ly_img.setBackground(ContextCompat.getDrawable(activity, R.drawable.img_border_selected));
             viewHolder.tv_filter_name.setTextColor(activity.getResources().getColor(R.color.tab_white));
@@ -89,7 +92,6 @@ public class ColorFilterAdapter extends RecyclerView.Adapter<ColorFilterAdapter.
             viewHolder.ly_img.setBackgroundResource(R.drawable.img_border_unselected);
             viewHolder.tv_filter_name.setTextColor(activity.getResources().getColor(R.color.tab_white));
         }
-
     }
 
     @Override
