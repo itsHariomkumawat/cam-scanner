@@ -102,7 +102,7 @@ public class SavedEditDocumentActivity extends BaseActivity implements View.OnCl
 
     public String from;
     protected ImageView iv_back;
-    protected ImageView iv_home;
+    protected TextView iv_home;
     protected PhotoView iv_preview_edited;
 
     public String noteTxt;
@@ -134,7 +134,6 @@ public class SavedEditDocumentActivity extends BaseActivity implements View.OnCl
         registerReceiver(broadcastReceiver, new IntentFilter(getPackageName() + ".ImageToTextActivity"));
     }
 
-
     @Override
     public void onDestroy() {
         if (shareUri != null) {
@@ -150,7 +149,6 @@ public class SavedEditDocumentActivity extends BaseActivity implements View.OnCl
         }
     }
 
-
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -162,27 +160,24 @@ public class SavedEditDocumentActivity extends BaseActivity implements View.OnCl
         bindView();
     }
 
-
     private void init() {
         adView = findViewById(R.id.adView);
         AdsUtils.showGoogleBannerAd(this, adView);
         AdsUtils.loadGoogleInterstitialAd(this, SavedEditDocumentActivity.this);
 
         iv_back = (ImageView) findViewById(R.id.iv_back);
-        iv_home = (ImageView) findViewById(R.id.iv_home);
+        iv_home = (TextView) findViewById(R.id.iv_home);
         viewPager = (ViewPagerFixed) findViewById(R.id.viewPager);
         tv_page = (TextView) findViewById(R.id.tv_page);
         iv_preview_edited = (PhotoView) findViewById(R.id.iv_preview_edited);
         rv_saved_tools = (RecyclerView) findViewById(R.id.rv_saved_tools);
     }
 
-
     private void bindView() {
         edit_doc_grp_name = getIntent().getStringExtra("edit_doc_group_name");
         current_doc_name = getIntent().getStringExtra("current_doc_name");
         position = getIntent().getIntExtra("position", -1);
         from = getIntent().getStringExtra("from");
-
 
         if (from.equals("ScannerActivity")) {
             iv_preview_edited.setVisibility(View.GONE);
@@ -194,7 +189,6 @@ public class SavedEditDocumentActivity extends BaseActivity implements View.OnCl
             viewPager.setCurrentItem(position);
             tv_page.setText(String.format("%s / %s", new Object[]{Integer.valueOf(position + 1), Integer.valueOf(viewPagerList.size())}));
             Constant.original = viewPagerList.get(position).getBitmap();
-
 
             viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                 @Override
@@ -217,7 +211,6 @@ public class SavedEditDocumentActivity extends BaseActivity implements View.OnCl
             });
         }
 
-
         else {
             tv_page.setVisibility(View.GONE);
             viewPager.setVisibility(View.GONE);
@@ -229,14 +222,12 @@ public class SavedEditDocumentActivity extends BaseActivity implements View.OnCl
         setSavedToolsAdapter();
     }
 
-
     private void setSavedToolsAdapter() {
         rv_saved_tools.setHasFixedSize(true);
         rv_saved_tools.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
         savedToolsAdapter = new SavedToolsAdapter(this);
         rv_saved_tools.setAdapter(savedToolsAdapter);
     }
-
 
     @Override
     public void onClick(View view) {
@@ -250,7 +241,6 @@ public class SavedEditDocumentActivity extends BaseActivity implements View.OnCl
             finish();
         }
     }
-
 
     @Override
     public void onSavedToolSelected(SavedToolType savedToolType) {

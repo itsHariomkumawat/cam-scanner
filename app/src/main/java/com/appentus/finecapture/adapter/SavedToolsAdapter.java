@@ -26,14 +26,14 @@ public class SavedToolsAdapter extends RecyclerView.Adapter<SavedToolsAdapter.Vi
 
     public SavedToolsAdapter(OnSavedToolSelected onSavedToolSelected2) {
         onSavedToolSelected = onSavedToolSelected2;
-        savedToolsList.add(new SavedToolModel(R.drawable.edit_save, SavedToolType.EDIT, "Edit"));
-        savedToolsList.add(new SavedToolModel(R.drawable.pdf_save, SavedToolType.OPENPDF, "Open pdf"));
-        savedToolsList.add(new SavedToolModel(R.drawable.rename_white, SavedToolType.NAME, "Rename"));
-        savedToolsList.add(new SavedToolModel(R.drawable.rotate_save, SavedToolType.ROTATE, "Rotate"));
-        savedToolsList.add(new SavedToolModel(R.drawable.note_save, SavedToolType.NOTE, "Note"));
-        savedToolsList.add(new SavedToolModel(R.drawable.img_to_text_save, SavedToolType.ImageToText, "Image to text"));
-        savedToolsList.add(new SavedToolModel(R.drawable.share_save, SavedToolType.SHARE, "Share"));
-        savedToolsList.add(new SavedToolModel(R.drawable.delete_save, SavedToolType.DELETE, "Delete"));
+        savedToolsList.add(new SavedToolModel(R.drawable.ic_new_edit, SavedToolType.EDIT, "Edit"));
+        savedToolsList.add(new SavedToolModel(R.drawable.ic_new_open_pdf, SavedToolType.OPENPDF, "Open pdf"));
+        savedToolsList.add(new SavedToolModel(R.drawable.ic_new_rename, SavedToolType.NAME, "Rename"));
+        savedToolsList.add(new SavedToolModel(R.drawable.ic_new_rotate, SavedToolType.ROTATE, "Rotate"));
+        savedToolsList.add(new SavedToolModel(R.drawable.ic_new_note, SavedToolType.NOTE, "Note"));
+        savedToolsList.add(new SavedToolModel(R.drawable.ic_new_image_to_text, SavedToolType.ImageToText, "Image to text"));
+        savedToolsList.add(new SavedToolModel(R.drawable.ic_new_share, SavedToolType.SHARE, "Share"));
+        savedToolsList.add(new SavedToolModel(R.drawable.ic_new_delete, SavedToolType.DELETE, "Delete"));
     }
 
     @Override

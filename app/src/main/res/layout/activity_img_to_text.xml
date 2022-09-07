@@ -27,7 +27,7 @@
                 android:onClick="onClick"
                 android:padding="@dimen/_7sdp"
                 android:src="@drawable/backwhite"
-                app:tint="@color/black" />
+                app:tint="@color/white" />
 
             <TextView
                 style="@style/TextPopMed14"
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="Image to Text"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_toRightOf="@+id/iv_back"
                 android:textSize="@dimen/_15sdp" />
@@ -98,7 +98,8 @@
                 android:layout_marginEnd="@dimen/_8sdp"
                 android:onClick="onClick"
                 android:padding="@dimen/_4sdp"
-                android:src="@drawable/copytxt" />
+                android:src="@drawable/copytxt"
+                app:tint="@color/ThemeBg" />
 
             <ImageView
                 android:id="@+id/iv_share_txt"
@@ -108,7 +109,8 @@
                 android:layout_marginEnd="@dimen/_8sdp"
                 android:onClick="onClick"
                 android:layout_alignParentEnd="true"
-                android:src="@drawable/sharetext" />
+                android:src="@drawable/sharetext"
+                app:tint="@color/ThemeBg" />
 
 
 

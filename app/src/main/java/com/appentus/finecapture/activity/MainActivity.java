@@ -630,7 +630,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             public void onClick(View v) {
                 et_folder_name.setText("");
             }
-
         });
 
         dialog.show();
@@ -1972,11 +1971,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     public void onBackPressed() {
         if (drawer_ly.isDrawerOpen(GravityCompat.START)) {
             drawer_ly.closeDrawer(GravityCompat.START);
-        } else if (rl_search_bar.getVisibility() == View.VISIBLE) {
-            rl_search_bar.setVisibility(View.GONE);
-            iv_search.setVisibility(View.VISIBLE);
-            iv_more.setVisibility(View.VISIBLE);
-        } else {
+        } /*else if (rl_search_bar.getVisibility() == View.VISIBLE) {
+            //rl_search_bar.setVisibility(View.GONE);
+          //  iv_search.setVisibility(View.VISIBLE);
+            //iv_more.setVisibility(View.VISIBLE);
+        }*/ else {
             finish();
         }
     }

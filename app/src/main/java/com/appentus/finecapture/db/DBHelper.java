@@ -167,7 +167,6 @@ public class DBHelper extends SQLiteOpenHelper {
         return arrayList;
     }
 
-
     public String getSingleNote(String str, String str2) {
         Cursor rawQuery = getReadableDatabase().rawQuery("SELECT  * FROM " + str.replace(" ", "") + " WHERE " + KEY_IMG_NAME + " = '" + str2 + "'", (String[]) null);
         if (rawQuery == null) {

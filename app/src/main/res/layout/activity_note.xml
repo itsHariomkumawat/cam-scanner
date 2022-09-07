@@ -26,14 +26,14 @@
                 android:onClick="onClick"
                 android:padding="@dimen/_7sdp"
                 android:src="@drawable/backwhite"
-                app:tint="@color/black" />
+                app:tint="@color/white" />
 
             <TextView
                 style="@style/TextPopMed14"
                 android:layout_toEndOf="@+id/iv_back"
                 android:layout_centerVertical="true"
                 android:text="Note"
-            android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:textSize="@dimen/_15sdp" />
 
@@ -43,14 +43,13 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/_6sdp"
-                android:background="@drawable/app_logo"
                 android:paddingStart="@dimen/_12sdp"
                 android:paddingTop="@dimen/_2sdp"
                 android:paddingEnd="@dimen/_12sdp"
                 android:paddingBottom="@dimen/_2sdp"
                 android:text="Save"
                 android:textColor="#ffffff"
-                android:textSize="@dimen/_10sdp" />
+                android:textSize="@dimen/_15sdp" />
 
         </RelativeLayout>
 
@@ -79,7 +78,7 @@
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#000000"
+            android:background="@color/white"
             android:paddingTop="@dimen/_10sdp"
             android:paddingBottom="@dimen/_10sdp"
             android:scrollbars="none">
@@ -104,7 +103,8 @@
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
                         android:layout_gravity="center"
-                        android:src="@drawable/undo" />
+                        android:src="@drawable/undo"
+                        app:tint="@color/ThemeBg" />
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -112,7 +112,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/undo"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -131,7 +131,8 @@
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
                         android:layout_gravity="center"
-                        android:src="@drawable/redo" />
+                        android:src="@drawable/redo"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -139,7 +140,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/redo"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -158,7 +159,8 @@
                         android:layout_width="@dimen/_15sdp"
                         android:layout_gravity="center"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/bold" />
+                        android:src="@drawable/bold"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -166,7 +168,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/bold"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -185,7 +187,8 @@
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
                         android:layout_gravity="center"
-                        android:src="@drawable/italic" />
+                        android:src="@drawable/italic"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -193,7 +196,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/italic"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -212,7 +215,8 @@
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
                         android:layout_gravity="center"
-                        android:src="@drawable/subscript" />
+                        android:src="@drawable/subscript"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -220,7 +224,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/subscript"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -239,7 +243,8 @@
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
                         android:layout_gravity="center"
-                        android:src="@drawable/superscript" />
+                        android:src="@drawable/superscript"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -247,7 +252,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/superscript"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -266,7 +271,8 @@
                         android:layout_width="@dimen/_15sdp"
                         android:layout_gravity="center"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/strike" />
+                        android:src="@drawable/strike"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -274,7 +280,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/strikethrough"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -294,7 +300,8 @@
                         android:layout_width="@dimen/_15sdp"
                         android:layout_gravity="center"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/underline" />
+                        android:src="@drawable/underline"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -302,7 +309,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/underline"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -321,7 +328,8 @@
                         android:layout_gravity="center"
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/head1" />
+                        android:src="@drawable/head1"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -329,7 +337,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/headline1"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -348,7 +356,8 @@
                         android:layout_gravity="center"
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/head2" />
+                        android:src="@drawable/head2"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -356,7 +365,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/headline2"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -375,7 +384,8 @@
                         android:layout_gravity="center"
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/head3" />
+                        android:src="@drawable/head3"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -383,7 +393,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/headline3"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -402,7 +412,8 @@
                         android:layout_gravity="center"
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/head4" />
+                        android:src="@drawable/head4"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -410,7 +421,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/headline4"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -430,7 +441,8 @@
                         android:layout_width="@dimen/_15sdp"
                         android:layout_gravity="center"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/head5" />
+                        android:src="@drawable/head5"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -438,7 +450,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/headline5"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -457,7 +469,8 @@
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
                         android:layout_gravity="center"
-                        android:src="@drawable/head6" />
+                        android:src="@drawable/head6"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -465,7 +478,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/headline6"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -484,7 +497,8 @@
                         android:layout_width="@dimen/_15sdp"
                         android:layout_gravity="center"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/r_text" />
+                        android:src="@drawable/r_text"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -492,7 +506,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/redText"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -512,7 +526,8 @@
                         android:id="@+id/iv_indent"
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/indent" />
+                        android:src="@drawable/indent"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -520,7 +535,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/indent"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -539,7 +554,8 @@
                         android:id="@+id/iv_outdent"
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/outdent" />
+                        android:src="@drawable/outdent"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -547,7 +563,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/outdent"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -566,7 +582,8 @@
                         android:id="@+id/iv_align_left"
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/left" />
+                        android:src="@drawable/left"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -574,7 +591,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/leftText"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -593,7 +610,8 @@
                         android:id="@+id/iv_align_center"
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/center" />
+                        android:src="@drawable/center"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -601,7 +619,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/center"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -621,7 +639,8 @@
                         android:id="@+id/iv_align_right"
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/right" />
+                        android:src="@drawable/right"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -629,7 +648,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/rightText"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -648,7 +667,8 @@
                         android:id="@+id/iv_insert_bullets"
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/linedot" />
+                        android:src="@drawable/linedot"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -656,7 +676,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/lineDot"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -675,7 +695,8 @@
                         android:id="@+id/iv_insert_numbers"
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/line_num" />
+                        android:src="@drawable/line_num"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -683,7 +704,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/number"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
@@ -702,7 +723,8 @@
                         android:id="@+id/iv_insert_checkbox"
                         android:layout_width="@dimen/_15sdp"
                         android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/checkmark" />
+                        android:src="@drawable/checkmark"
+                        app:tint="@color/ThemeBg"/>
 
                     <TextView
                         style="@style/TextPopReg12"
@@ -710,7 +732,7 @@
                         android:layout_marginTop="@dimen/_6sdp"
                         android:gravity="center"
                         android:text="@string/checkMark"
-                        android:textColor="@color/tab_white"
+                        android:textColor="@color/ThemeBg"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 

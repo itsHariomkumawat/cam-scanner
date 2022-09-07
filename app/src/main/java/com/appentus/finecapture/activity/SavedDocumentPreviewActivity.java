@@ -58,6 +58,7 @@ public class SavedDocumentPreviewActivity extends BaseActivity implements View.O
     private static final String TAG = "SavedDocumentPreviewAct";
     public static ArrayList<DBModel> currentDocList = new ArrayList<>();
     public static SavedDocumentPreviewActivity savedDocumentPreviewActivity;
+
     BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -97,7 +98,7 @@ public class SavedDocumentPreviewActivity extends BaseActivity implements View.O
 
     public String edit_doc_grp_name;
     protected ImageView iv_back;
-    protected ImageView iv_home;
+    protected TextView iv_home;
     protected String noteTxt;
     protected Uri pdfUri;
 
@@ -160,7 +161,7 @@ public class SavedDocumentPreviewActivity extends BaseActivity implements View.O
         AdsUtils.loadGoogleInterstitialAd(this, SavedDocumentPreviewActivity.this);
 */
         iv_back = (ImageView) findViewById(R.id.iv_back);
-        iv_home = (ImageView) findViewById(R.id.iv_home);
+        iv_home = (TextView) findViewById(R.id.iv_home);
         viewPager = (ViewPagerFixed) findViewById(R.id.viewPager);
         tv_page = (TextView) findViewById(R.id.tv_page);
         rv_saved_tools = (RecyclerView) findViewById(R.id.rv_saved_tools);
@@ -261,6 +262,7 @@ public class SavedDocumentPreviewActivity extends BaseActivity implements View.O
     @Override
     public void onSavedToolSelected(SavedToolType savedToolType) {
         switch (savedToolType) {
+
             case EDIT:
                 try {
                     BitmapFactory.Options options = new BitmapFactory.Options();
@@ -283,12 +285,14 @@ public class SavedDocumentPreviewActivity extends BaseActivity implements View.O
                 }
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(Constant.original);
+
                 new openPDF(arrayList, edit_doc_grp_name).execute(new String[0]);
                 return;
 
             case NAME:
                 updateGroupName(edit_doc_grp_name);
                 return;
+
             case ROTATE:
                 try {
                     BitmapFactory.Options options3 = new BitmapFactory.Options();
@@ -299,6 +303,7 @@ public class SavedDocumentPreviewActivity extends BaseActivity implements View.O
                 }
                 new rotateDoc().execute(new String[0]);
                 return;
+
             case NOTE:
                 noteTxt = dataBaseHelper.getSingleNote(edit_doc_grp_name, current_doc_name);
                 Constant.IdentifyActivity = "NoteActivity_Preview";
@@ -316,6 +321,7 @@ public class SavedDocumentPreviewActivity extends BaseActivity implements View.O
                 Constant.IdentifyActivity = "ImageToTextActivity_Preview";
                 AdsUtils.showGoogleInterstitialAd(SavedDocumentPreviewActivity.this, true);
                 return;
+
             case SHARE:
                 try {
                     BitmapFactory.Options options5 = new BitmapFactory.Options();
@@ -332,7 +338,7 @@ public class SavedDocumentPreviewActivity extends BaseActivity implements View.O
                 dialog.requestWindowFeature(1);
                 dialog.setContentView(R.layout.delete_document_dialog);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-//                dialog.getWindow().setLayout(-1, -2);
+               //dialog.getWindow().setLayout(-1, -2);
                 dialog.setCanceledOnTouchOutside(true);
                 dialog.setCancelable(true);
 
